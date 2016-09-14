@@ -25,6 +25,7 @@ output "ip" {
 	value = "${aws_instance.ec2.public_ip}"
 }
 
-output "az" {
-	value = "${aws_instance.ec2.availability_zone}"
+output "public dns" {
+	value = "${aws_instance.ec2.public_dns}"
 }
+
