@@ -7,7 +7,7 @@ Syntax for the Makefile:
 * `make plan`: as above.
 * `make plan-eu`: as above.
 * `make plan-us`: as above for the `us-east-1` AZ.
-* `make create`: `terraform apply `for `eu-central-1` AZ.
+* `make create`: `terraform apply` for `eu-central-1` AZ.
 * `make create-eu`: as above.
 * `make create-us`: as above for `us-east-1` AZ.
 * `make destroy`: `terraform destroy` for the `eu-central-1` AZ.
