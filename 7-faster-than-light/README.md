@@ -1,6 +1,6 @@
 # Part 7 - Faster Than Light
 
-Started to add Ansible playbook to try _that_ out.
+Started to add [Ansible](https://ansible.com) playbook to try _that_ out.
 
 Syntax for the Makefile:
 * `make all`: `terraform plan` for the `eu-central-1` AZ. Needed _something_ as a default.
@@ -10,7 +10,7 @@ Syntax for the Makefile:
 * `make create`: `terraform apply` for `eu-central-1` AZ.
 * `make create-eu`: as above.
 * `make create-us`: as above for `us-east-1` AZ.
-* `make www`: `terraform apply` for `eu-central-1` AZ, then does an `ansible` whatever to get NGINX up and running with a microscale webpage.
+* `make www`: Will do `terraform apply` for `eu-central-1` AZ, then does an `ansible` whatever to get NGINX up and running with a microscale webpage. Currently kicks the EC2 instance IP into the `ansible_hosts` file, sets it as environmental variable, then does a ping check of the host.
 * `make www-eu`: as above.
 * `make www-us`: as above for `us-east-1` AZ.
 * `make destroy`: `terraform destroy` for the `eu-central-1` AZ.

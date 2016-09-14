@@ -16,11 +16,19 @@ plan: plan-eu
 
 create-eu:
 	terraform apply $(KEYS)
+	printf "[ec2]\n`terraform output ip`\n" > ansible_hosts
 
 create-us:
 	terraform apply $(KEYS) $(US)
+	printf "[ec2]\n`terraform output ip`\n" > ansible_hosts
 
 create: create-eu
+
+www: www-eu
+
+www-eu:
+	ansible ec2 -u admin -m ping
+
 
 destroy-eu:
 	terraform destroy $(KEYS)
