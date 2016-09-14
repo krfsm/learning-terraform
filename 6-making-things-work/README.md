@@ -1,6 +1,6 @@
 # Part 6 - Making Things Work
 
-This is where things start to get a bit more advanced. In [part 5](../5-outputs) I started to mess around with maps, and in this part I both added security groups for the AZ and a Makefile.
+This is where things start to get a bit more advanced. In [part 5](../5-outputs) I started to mess around with maps, and in this part I both added security groups for the AZs and a Makefile.
 
 Syntax for the Makefile:
 * `make all`: `terraform plan` for the `eu-central-1` AZ. Needed _something_ as a default.
