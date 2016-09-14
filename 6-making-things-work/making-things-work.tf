@@ -16,11 +16,15 @@ provider "aws" {
 }
 
 # Get AMI from list, default region if nothing's specified
-resource "aws_instance" "example" {
+resource "aws_instance" "ec2" {
   ami           = "ami-${lookup(var.amis,var.region)}"
   instance_type = "t2.micro"
 }
 
 output "ip" {
-	value = "${aws_instance.example.public_ip}"
+	value = "${aws_instance.ec2.public_ip}"
+}
+
+output "az" {
+	value = "${aws_instance.ec2.availability_zone}"
 }
