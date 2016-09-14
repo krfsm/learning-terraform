@@ -1,2 +1,2 @@
 # learning-terraform
-Learning my way around Terraform
+Learning me a [Terraform](https://terraform.io).
