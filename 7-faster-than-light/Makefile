@@ -27,14 +27,15 @@ create: create-eu
 www: www-eu
 
 www-eu:
-	ansible ec2 -u admin -m ping
-
+	ansible ec2 -m ping
 
 destroy-eu:
 	terraform destroy $(KEYS)
+	rm ansible_hosts
 
 destroy-us:
 	terraform destroy $(KEYS) $(US)
+	rm ansible_hosts
 
 destroy: destroy-eu
 
