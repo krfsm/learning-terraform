@@ -7,7 +7,10 @@ variable "amis" {
 	type = "map"
 	default = {}
 }
-
+variable "secgroup" {
+	type = "map"
+	default = {}
+}
 
 provider "aws" {
   access_key = "${var.access_key}"
@@ -17,8 +20,10 @@ provider "aws" {
 
 # Get AMI from list, default region if nothing's specified
 resource "aws_instance" "ec2" {
-  ami           = "ami-${lookup(var.amis,var.region)}"
-  instance_type = "t2.micro"
+  ami			= "ami-${lookup(var.amis,var.region)}"
+  key_name		= "Cykranosh.com"
+  instance_type		= "t2.micro"
+  security_groups	= ["${lookup(var.secgroup,var.region)}"]
 }
 
 output "ip" {
