@@ -24,10 +24,12 @@ create-us:
 
 create: create-eu
 
-www: www-eu
-
-www-eu:
+www:
 	ansible ec2 -m ping
+
+www-eu: www
+
+www-us: www
 
 destroy-eu:
 	terraform destroy $(KEYS)
