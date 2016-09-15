@@ -41,3 +41,4 @@ destroy: destroy-eu
 
 clean:
 	rm *.tfstate*
+	cp ../terraform.tfvars .

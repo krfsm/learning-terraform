@@ -1,0 +1,10 @@
+---
+- name: Install Nginx.
+  hosts: ec2
+  remote_user: admin
+  become: yes
+  become_method: sudo
+
+  roles:
+  - nginx
+

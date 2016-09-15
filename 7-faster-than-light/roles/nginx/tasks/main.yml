@@ -1,0 +1,21 @@
+---
+- name: Install nginx
+  apt: name=nginx state=present
+
+#- name: Copy nginx configuration and add symlink to sites-enabled
+#  template: src=default.conf dest=/etc/nginx/sites-available/default
+#  command: /bin/ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+#
+#- name: Create /var/www/html/ directory and www-data user/group.
+#  user: name=www-data group=www-data shell=/bin/false state=present
+#  group: name=www-data state=present
+#  command: /bin/mkdir -p /var/www/html/
+#
+#- name: Create index.html file.
+#  template: src=index.html dest=/var/www/html/index.html
+#
+#- name: Set permissions.
+#  command: /bin/chown -R www-data:www-data /var/www/
+#
+#- name: Then restart nginx.
+#  notify: restart nginx
