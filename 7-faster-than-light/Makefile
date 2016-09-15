@@ -6,6 +6,10 @@ US=-var region=us-east-1
 
 all: plan-eu
 
+# Get actual AWS credentials
+init:
+	cp ../../terraform.tfvars .
+
 plan-eu:
 	terraform plan $(KEYS)
 
