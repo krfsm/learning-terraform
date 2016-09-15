@@ -6,6 +6,10 @@ US=-var region=us-east-1
 
 all: plan-eu
 
+# Get actual AWS credentials
+init:
+	cp ../../terraform.tfvars .
+
 plan-eu:
 	terraform plan $(KEYS)
 
@@ -24,10 +28,12 @@ create-us:
 
 create: create-eu
 
-www: www-eu
-
-www-eu:
+www:
 	ansible ec2 -m ping
+
+www-eu: www
+
+www-us: www
 
 destroy-eu:
 	terraform destroy $(KEYS)
