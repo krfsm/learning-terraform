@@ -7,7 +7,11 @@ variable "amis" {
 	type = "map"
 	default = {}
 }
-variable "secgroup" {
+variable "secgroup-ssh" {
+	type = "map"
+	default = {}
+}
+variable "secgroup-www" {
 	type = "map"
 	default = {}
 }
@@ -23,7 +27,7 @@ resource "aws_instance" "ec2" {
   ami			= "ami-${lookup(var.amis,var.region)}"
   key_name		= "Cykranosh.com"
   instance_type		= "t2.micro"
-  security_groups	= ["${lookup(var.secgroup,var.region)}"]
+  security_groups	= ["${lookup(var.secgroup-ssh,var.region)}","${lookup(var.secgroup-www,var.region)}"]
 }
 
 output "ip" {
